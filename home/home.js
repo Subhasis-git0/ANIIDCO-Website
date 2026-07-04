@@ -5,6 +5,7 @@ function setActiveNav(btn){
   });
   btn.classList.add('home');
 }
+
 function toggleDropdown(btn){
   var wasOpen = btn.classList.contains('open');
   document.querySelectorAll('.nav-item').forEach(function(el){
@@ -14,6 +15,7 @@ function toggleDropdown(btn){
     btn.classList.add('open');
   }
 }
+
 // Close any open dropdown state when clicking outside the nav
 document.addEventListener('click', function(e){
   if(!e.target.closest('nav')){
@@ -29,54 +31,63 @@ function initHeroCarousel(){
   if(!hero){return;}
 
   var heroPhoto = hero.querySelector('.hero-photo');
-  var heroLabel = heroPhoto ? heroPhoto.querySelector('.hero-photo-label') : null;
   var heroTitle = hero.querySelector('.hero-caption h2');
   var heroText = hero.querySelector('.hero-caption p');
   var arrows = hero.querySelectorAll('.hero-arrow');
   var dots = hero.querySelectorAll('.dot');
 
   if(!heroPhoto){return;}
-
+  
+/* chnage the image and txt from here */
   var slides = [
     {
-      image: 'images/logo.jpg',
-      title: 'INAUGURATION OF SAGARIKA EMPORIUM',
-      text: 'ON 23.08.2025 AT CHENNAI, TTDC TOURISM COMPLEX, WALLAJAH ROAD'
+      image: "images/banner1.jpg",
+      title: "INAUGURATION OF SAGARIKA EMPORIUM",
+      text: "ON 23.08.2025 AT CHENNAI, TTDC TOURISM COMPLEX, WALLAJAH ROAD"
     },
     {
-      image: 'images/chairman.jpg',
-      title: 'OUR LEADERSHIP AT ANIIDCO',
-      text: 'A strong team driving growth and development across the islands.'
+      image: "images/banner2.jpg",
+      title: "OUR LEADERSHIP AT ANIIDCO",
+      text: "A strong team driving growth and development across the islands."
     },
     {
-      image: 'images/md.jpg',
-      title: 'RESORTS AND TOURISM INITIATIVES',
-      text: 'Discover the latest developments in hospitality and tourism.'
+      image: "images/banner3.jpg",
+      title: "RESORTS AND TOURISM INITIATIVES",
+      text: "Discover the latest developments in hospitality and tourism."
     },
     {
-      image: 'images/aniidco.png',
-      title: 'WELCOME TO ANIIDCO',
-      text: 'Promoting sustainable development and tourism for the Andaman and Nicobar Islands.'
+      image: "images/banner4.jpg",
+      title: "WELCOME TO ANIIDCO",
+      text: "Promoting sustainable development and tourism for the Andaman and Nicobar Islands."
+    },
+    {
+      image: "images/banner5.jpg",
+      title: "SUSTAINABLE ISLAND DEVELOPMENT",
+      text: "Building a better future for the Andaman and Nicobar Islands."
     }
   ];
 
   var currentSlide = 0;
 
   function renderSlide(index){
-    var slide = slides[index];
-    if(!slide){return;}
+    if(index < 0 || index >= slides.length){return;}
 
-    heroPhoto.style.backgroundImage = 'url("' + slide.image + '")';
-    heroPhoto.classList.add('has-image');
-    if(heroLabel){heroLabel.style.display = 'none';}
+    var slide = slides[index];
+
+    // Change background image
+    heroPhoto.style.backgroundImage = "url('" + slide.image + "')";
+
+    // Update text
     if(heroTitle){heroTitle.textContent = slide.title;}
     if(heroText){heroText.textContent = slide.text;}
 
+    // Update dots
     dots.forEach(function(dot, dotIndex){
       dot.classList.toggle('active', dotIndex === index);
     });
   }
 
+  // Arrow click
   arrows.forEach(function(arrow){
     arrow.addEventListener('click', function(){
       var direction = arrow.classList.contains('left') ? -1 : 1;
@@ -85,6 +96,7 @@ function initHeroCarousel(){
     });
   });
 
+  // Dot click
   dots.forEach(function(dot, index){
     dot.addEventListener('click', function(){
       currentSlide = index;
@@ -92,12 +104,14 @@ function initHeroCarousel(){
     });
   });
 
+  // First image load
   renderSlide(currentSlide);
 }
 
 // Footer accordion for smaller screens
 document.addEventListener('DOMContentLoaded', function(){
   initHeroCarousel();
+
   var footerCols = document.querySelectorAll('.site-footer .footer-col');
   if(!footerCols.length){return;}
 

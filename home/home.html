@@ -91,8 +91,12 @@
   <!-- Hero -->
   <div class="hero-wrap">
     <div class="hero">
-      <div class="hero-photo">
-        <div class="hero-photo-label">Image placeholder<br>Add photo here</div>
+      <div class="hero-photo" id="heroPhoto"></div>
+      <div class="hero-arrow left" onclick="prevImage()">
+        ←
+      </div>
+      <div class="hero-arrow right" onclick="nextImage()">
+        →
       </div>
       <div class="hero-arrow left">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
@@ -141,7 +145,6 @@
       <h2>ANIIDCO LTD.</h2>
       <p>Andaman and Nicobar Islands Integrated Development Corporation Limited (ANIIDCO) was incorporated on 28th June 1988 under the Companies Act 1956 for rapid economic growth of the Islands. The main objective of the Corporation is for holistic and sustainable development of the territory.</p>
       <div class="know-more-btn">
-        <span class="btn-image-slot" aria-hidden="true"></span>
         <span>Know More About ANIIDCO</span>
       </div>
     </div>
@@ -246,124 +249,115 @@
   </div>
 
   <script src="home.js"></script>
+
 <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-top">
+  <footer class="site-footer">
+    <div class="footer-top">
 
-    <!-- Contact Info -->
-    <div class="footer-col">
-      <div class="footer-head">
-        <div class="footer-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <div class="footer-head">
+          <div class="footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+          </div>
+          <div class="footer-head-text">
+            <h3>CONTACT INFO</h3>
+            <div class="footer-underline"></div>
+          </div>
         </div>
-        <div class="footer-head-text">
-          <h3>CONTACT INFO</h3>
-          <div class="footer-underline"></div>
+
+        <div class="footer-row" style="align-items:flex-start;">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
+          <span>ANIIDCO Ltd., Vikas Bhawan<br>PB No.180, Port Blair,<br>PIN- 744101, Andaman &amp; Nicobar Islands, India</span>
         </div>
-      </div>
+        <div class="footer-row">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+          <span>EPABX No. +91 - 3192 - 234107, 234108,</span>
+        </div>
+        <div class="footer-row">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
+          <span>Phone : 236086, 234108</span>
+        </div>
+        <div class="footer-row">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <span>Email : <a href="#">aniidco[at]gmail[dot]com</a></span>
+        </div>
 
-      <div class="footer-row">
-        <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
-        <span>ANIIDCO Ltd., Vikas Bhawan</span>
-      </div>
-      <div class="footer-row">
-        <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <span>PB No.180, Port Blair,</span>
-      </div>
-      <div class="footer-row">
-        <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
-        <span>PIN- 744101, Andaman &amp; Nicobar Islands, India</span>
-      </div>
-      <div class="footer-row">
-        <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
-        <span>EPABX No. +91 - 3192 - 234107, 234108,</span>
-      </div>
-      <div class="footer-row">
-        <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
-        <span>Phone : 236086, 234108</span>
-      </div>
-      <div class="footer-row">
-        <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-        <span>Email : <a href="#">aniidco[at]gmail[dot]com</a></span>
-      </div>
+        <div class="visitors-box">
+          <div class="visitors-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
+          <div>
+            <div class="label">Visitors</div>
+            <div class="total">Total: <b>2 213 330</b></div>
+          </div>
+        </div>
 
-      <div class="visitors-box">
-        <div class="visitors-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
-        <div>
-          <div class="label">Visitors</div>
-          <div class="total">Total: <b>2 213 330</b></div>
+        <div class="footer-extra-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.4 8.7-8 9-4.6-.3-8-4-8-9V7z"/></svg>
+          Zahn-Versicherung
         </div>
       </div>
 
-      <div class="footer-extra-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.4 8.7-8 9-4.6-.3-8-4-8-9V7z"/></svg>
-        Zahn-Versicherung
+      <!-- Follow Us -->
+      <div class="footer-col">
+        <div class="footer-head">
+          <div class="footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          </div>
+          <div class="footer-head-text">
+            <h3>FOLLOW US</h3>
+            <div class="footer-underline"></div>
+          </div>
+        </div>
+
+        <div class="follow-card">
+          <div class="follow-avatar"></div>
+          <span>Megapode Resort</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+        </div>
       </div>
+
+      <!-- CSR Policy -->
+      <div class="footer-col">
+        <div class="footer-head">
+          <div class="footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
+          </div>
+          <div class="footer-head-text">
+            <h3>CSR POLICY</h3>
+            <div class="footer-underline"></div>
+          </div>
+        </div>
+
+        <div class="csr-quote">
+          <div class="quote-mark">&#8220;</div>
+          <p>All donations towards the Prime Minister's National Relief Fund (PMNRF) are notified for 100% deduction from taxable income under Section 80G of the Income Tax Act, 1961.</p>
+          <div class="quote-mark end">&#8221;</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Follow Us -->
-    <div class="footer-col">
-      <div class="footer-head">
-        <div class="footer-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.jpg" alt="ANIIDCO Logo">
         </div>
-        <div class="footer-head-text">
-          <h3>FOLLOW US</h3>
-          <div class="footer-underline"></div>
-        </div>
-      </div>
-
-      <div class="follow-card">
-        <div class="follow-avatar"></div>
-        <span>Megapode Resort</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
-      </div>
-    </div>
-
-    <!-- CSR Policy -->
-    <div class="footer-col">
-      <div class="footer-head">
-        <div class="footer-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
-        </div>
-        <div class="footer-head-text">
-          <h3>CSR POLICY</h3>
-          <div class="footer-underline"></div>
+        <div class="footer-brand-text">
+          <span class="line1">© 2026 ANIIDCO Ltd. All Rights Reserved.</span>
+          <span class="line2">This website is created, maintained, and owned by Andaman &amp; Nicobar Islands Integrated Development Corporation Limited (ANIIDCO Ltd.).</span>
         </div>
       </div>
 
-      <div class="csr-quote">
-        <div class="quote-mark">&#8220;</div>
-        <p>All donations towards the Prime Minister's National Relief Fund (PMNRF) are notified for 100% deduction from taxable income under Section 80G of the Income Tax Act, 1961.</p>
-        <div class="quote-mark end">&#8221;</div>
+      <div class="footer-social">
+        <div class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7a4 4 0 001.8-2.2c-.8.5-1.6.8-2.5 1a4 4 0 00-6.9 3.6A11.4 11.4 0 013 4.9a4 4 0 001.2 5.3c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 003.2 3.9c-.5.1-1.1.2-1.7.1a4 4 0 003.7 2.8A8 8 0 012 18.6a11.3 11.3 0 006.1 1.8c7.3 0 11.3-6.1 11.3-11.3v-.5c.8-.6 1.4-1.3 1.9-2.1z"/></svg>
+        </div>
+        <div class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.9.2-1.5 1.5-1.5h1.6V4.2C16.3 4.1 15.2 4 14 4c-2.4 0-4 1.5-4 4.1v2.4H7.5v3H10V21h3.5z"/></svg>
+        </div>
       </div>
     </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
-      </div>
-      <div class="footer-brand-text">
-        <span class="line1">Content owned by ANIIDCO Ltd.,</span>
-        <span class="line2">Website Designed &amp; Developed by <a href="#">Digital Arts Andaman</a> and Hosted by <a href="#">National Informatics Centre</a></span>
-      </div>
-    </div>
-
-    <div class="footer-social">
-      <div class="social-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7a4 4 0 001.8-2.2c-.8.5-1.6.8-2.5 1a4 4 0 00-6.9 3.6A11.4 11.4 0 013 4.9a4 4 0 001.2 5.3c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 003.2 3.9c-.5.1-1.1.2-1.7.1a4 4 0 003.7 2.8A8 8 0 012 18.6a11.3 11.3 0 006.1 1.8c7.3 0 11.3-6.1 11.3-11.3v-.5c.8-.6 1.4-1.3 1.9-2.1z"/></svg>
-      </div>
-      <div class="social-btn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.9.2-1.5 1.5-1.5h1.6V4.2C16.3 4.1 15.2 4 14 4c-2.4 0-4 1.5-4 4.1v2.4H7.5v3H10V21h3.5z"/></svg>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
+  </footer>
   <script src="home.js"></script>
 </body>
 </html>
