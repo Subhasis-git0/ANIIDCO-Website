@@ -1,10 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Andaman & Nicobar Islands Integrated Development Corporation Limited</title>
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
 
@@ -18,7 +21,7 @@
   <header>
     <div class="brand">
       <div class="logo-circle">
-        <img src="images/logo.jpg" alt="ANIIDCO logo" onerror="this.style.display='none'">
+        <img src="{% static 'images/logo.jpg' %}" alt="ANIIDCO logo">
       </div>
       <div class="brand-divider"></div>
       <div class="brand-text">
@@ -29,7 +32,7 @@
     </div>
 
     <div class="tiranga">
-      <img src="images/tiranga.png" alt="Har Ghar Tiranga" onerror="this.style.display='none'">
+      <img src="{% static 'images/tiranga.png' %}" alt="Har Ghar Tiranga" onerror="this.style.display='none'">
     </div>
 
     <div class="search-box">
@@ -41,48 +44,48 @@
   <!-- Nav -->
   <nav>
     <button type="button" class="nav-item home" onclick="setActiveNav(this)">
-      <img class="nav-icon" src="images/home.png" alt="Home icon">
+      <img class="nav-icon" src="{% static 'images/home.png' %}" alt="Home icon">
       Home
     </button>
     <button type="button" class="nav-item" onclick="toggleDropdown(this)">
-      <img class="nav-icon" src="images/aniidco.png" alt="ANIIDCO icon">
+      <img class="nav-icon" src="{% static 'images/aniidco.png' %}" alt="ANIIDCO icon">
       ANIIDCO
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
     <button type="button" class="nav-item" onclick="toggleDropdown(this)">
-      <img class="nav-icon" src="images/division.png" alt="Division icon">
+      <img class="nav-icon" src="{% static 'images/division.png' %}" alt="Division icon">
       Division
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
     <button type="button" class="nav-item" onclick="toggleDropdown(this)">
-      <img class="nav-icon" src="images/resorts.png" alt="Resorts icon">
+      <img class="nav-icon" src="{% static 'images/resorts.png' %}" alt="Resorts icon">
       Resorts
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
     <button type="button" class="nav-item" onclick="setActiveNav(this)">
-      <img class="nav-icon" src="images/booking.png" alt="Resorts Online Booking icon">
+      <img class="nav-icon" src="{% static 'images/booking.png' %}" alt="Resorts Online Booking icon">
       Resorts Online Booking
     </button>
     <button type="button" class="nav-item" onclick="setActiveNav(this)">
-      <img class="nav-icon" src="images/imfl.png" alt="IMFL Live Stock icon">
+      <img class="nav-icon" src="{% static 'images/imfl.png' %}" alt="IMFL Live Stock icon">
       IMFL Live Stock
     </button>
     <button type="button" class="nav-item" onclick="toggleDropdown(this)">
-      <img class="nav-icon" src="images/tender.png" alt="Tender icon">
+      <img class="nav-icon" src="{% static 'images/tender.png' %}" alt="Tender icon">
       Tender
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
     <button type="button" class="nav-item" onclick="setActiveNav(this)">
-      <img class="nav-icon" src="images/vacancy.png" alt="Vacancy icon">
+      <img class="nav-icon" src="{% static 'images/vacancy.png' %}" alt="Vacancy icon">
       Vacancy
     </button>
     <button type="button" class="nav-item" onclick="toggleDropdown(this)">
-      <img class="nav-icon" src="images/other-links.png" alt="Other Links icon">
+      <img class="nav-icon" src="{% static 'images/other-links.png' %}" alt="Other Links icon">
       Other Links
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
     <button type="button" class="nav-item" onclick="toggleDropdown(this)">
-      <img class="nav-icon" src="images/contact.png" alt="Contact icon">
+      <img class="nav-icon" src="{% static 'images/contact.png' %}" alt="Contact icon">
       Contact
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
@@ -123,7 +126,7 @@
   <div class="welcome-section">
     <div class="officials-container">
       <div class="official-card">
-        <img src="images/chairman.jpg" alt="Chairman">
+        <img src="{% static 'images/chairman.jpg' %}" alt="Chairman">
         <div class="official-info">
           <h3>Dr. Chandra Bhushan Kumar, IAS (AGMUT-1995)</h3>
           <p>Chairman-ANIIDCO</p>
@@ -131,7 +134,7 @@
       </div>
 
       <div class="official-card">
-        <img src="images/md.jpg" alt="Managing Director">
+        <img src="{% static 'images/md.jpg' %}" alt="Managing Director">
         <div class="official-info">
           <h3>Ms Chanchal Yadav, IAS (AGMUT-2008)</h3>
           <p>Managing Director-ANIIDCO</p>
@@ -212,7 +215,7 @@
     <div class="cards-grid">
       <div class="card">
         <div class="card-icon">
-          <img src="images/aniidco.png" alt="About ANIIDCO" onerror="this.style.display='none'">
+          <img src="{% static 'images/aniidco.png' %}" alt="About ANIIDCO" onerror="this.style.display='none'">
         </div>
         <h3>About ANIIDCO</h3>
         <p>Learn more about our vision, mission and mandate.</p>
@@ -221,7 +224,7 @@
 
       <div class="card">
         <div class="card-icon">
-          <img src="images/resorts.png" alt="Our Resorts" onerror="this.style.display='none'">
+          <img src="{% static 'images/resorts.png' %}" alt="Our Resorts" onerror="this.style.display='none'">
         </div>
         <h3>Our Resorts</h3>
         <p>Explore our beautiful resorts across the Islands.</p>
@@ -230,7 +233,7 @@
 
       <div class="card">
         <div class="card-icon">
-          <img src="images/tender.png" alt="Tenders" onerror="this.style.display='none'">
+          <img src="{% static 'images/tender.png' %}" alt="Tenders" onerror="this.style.display='none'">
         </div>
         <h3>Tenders</h3>
         <p>View latest tenders and procurement information.</p>
@@ -239,7 +242,7 @@
 
       <div class="card">
         <div class="card-icon">
-          <img src="images/vacancy.png" alt="Careers" onerror="this.style.display='none'">
+          <img src="{% static 'images/vacancy.png' %}" alt="Careers" onerror="this.style.display='none'">
         </div>
         <h3>Careers</h3>
         <p>Explore current vacancies and career opportunities.</p>
@@ -247,9 +250,6 @@
       </div>
     </div>
   </div>
-
-  <script src="home.js"></script>
-
 <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-top">
@@ -340,7 +340,7 @@
     <div class="footer-bottom">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="images/logo.jpg" alt="ANIIDCO Logo">
+          <img src="{% static 'images/logo.jpg' %}">
         </div>
         <div class="footer-brand-text">
           <span class="line1">© 2026 ANIIDCO Ltd. All Rights Reserved.</span>
@@ -358,6 +358,6 @@
       </div>
     </div>
   </footer>
-  <script src="home.js"></script>
+  <script src="{% static 'js/home.js' %}"></script>
 </body>
 </html>

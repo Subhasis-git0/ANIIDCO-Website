@@ -16,7 +16,7 @@ body{
   font-family:'Segoe UI', Arial, Helvetica, sans-serif;
   background:
     linear-gradient(rgba(174, 218, 255, 0.473), rgba(152, 246, 255, 0.82)),
-    url('images/background.png') center/cover fixed no-repeat;
+    url('../images/background.png') center/cover fixed no-repeat;
   color:var(--text-dark);
   overflow-x:hidden;
   min-height:100vh;
