@@ -1,0 +1,318 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Latest Announcements | ANIIDCO Admin</title>
+
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-building"></i>
+
+        <span>ANIIDCO Admin</span>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-search"></i>
+
+            <input type="text" placeholder="Search announcements...">
+
+        </div>
+
+        <div class="admin-profile">
+
+            <i class="fa-solid fa-user-circle"></i>
+
+            <span>Administrator</span>
+
+        </div>
+
+        <button class="logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <ul>
+
+            <li onclick="location.href='{% url 'dashboard' %}'">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+            <li onclick="location.href='{% url 'banner' %}'">
+
+                <i class="fa-solid fa-image"></i>
+
+                <span>Banner</span>
+
+            </li>
+
+            <li class="active">
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+                <span>Latest Announcements</span>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="content fade-in">
+
+        <h1>Latest Announcements</h1>
+
+        <!-- Add Announcement -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <h2>Add New Announcement</h2>
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="form-group">
+
+                    <label>Announcement Title</label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter announcement title">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Announcement Description</label>
+
+                    <textarea
+                        placeholder="Write the announcement here..."></textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Attach PDF (Optional)</label>
+
+                    <input
+                        type="file"
+                        accept=".pdf">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Pin this announcement to the top
+
+                    </label>
+
+                </div>
+
+                <div class="quick-actions">
+
+                    <button class="primary-btn">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        Preview
+
+                    </button>
+
+                    <button class="success-btn">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Publish
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Existing Announcements -->
+
+        <div class="panel mt-30">
+
+            <div class="panel-header">
+
+                <h2>Existing Announcements</h2>
+
+            </div>
+
+            <div class="panel-body">
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>Title</th>
+
+                        <th>Date</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+
+                        <td>Holiday Notice</td>
+
+                        <td>07 Jul 2026</td>
+
+                        <td>
+
+                            <span class="badge badge-success">
+
+                                Published
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+
+                                    <i class="fa-solid fa-pen"></i>
+
+                                </button>
+
+                                <button class="delete-btn">
+
+                                    <i class="fa-solid fa-trash"></i>
+
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Tender Notification</td>
+
+                        <td>05 Jul 2026</td>
+
+                        <td>
+
+                            <span class="badge badge-warning">
+
+                                Draft
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <button class="edit-btn">
+
+                                    <i class="fa-solid fa-pen"></i>
+
+                                </button>
+
+                                <button class="delete-btn">
+
+                                    <i class="fa-solid fa-trash"></i>
+
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="{% static 'js/admin.js' %}"></script>
+
+</body>
+
+</html>

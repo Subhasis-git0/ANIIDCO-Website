@@ -1,0 +1,377 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andaman & Nicobar Islands Integrated Development Corporation Limited</title>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <!-- Alert bar -->
+  <div class="alert-bar">
+    <span class="alert-badge">&#9650; ALERT</span>
+    <span class="alert-text">Do not share any information on this number 083199 96521 or on any number. Megapode, Hornbill and Dolphin Resort never ask any transaction through WhatsApp.&nbsp;&nbsp;&nbsp;&nbsp;The official land line number for communication is 03</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div class="logo-circle">
+        <img src="{% static 'images/logo.jpg' %}" alt="ANIIDCO logo">
+      </div>
+      <div class="brand-divider"></div>
+      <div class="brand-text">
+        <h1>Andaman &amp; Nicobar Islands<br>Integrated Development Corporation Limited</h1>
+        <div class="sub">(A Government undertaking)</div>
+        <div class="cin">CIN No. U74999AN1988SGC000028 | GST No. 35AACCA4070B1ZB</div>
+      </div>
+    </div>
+
+    <div class="tiranga">
+      <img src="{% static 'images/tiranga.png' %}" alt="Har Ghar Tiranga" onerror="this.style.display='none'">
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav>
+    <button type="button" class="nav-item home" onclick="setActiveNav(this)">
+      <img class="nav-icon" src="{% static 'images/home.png' %}" alt="Home icon">
+      Home
+    </button>
+    <button type="button" class="nav-item" onclick="toggleDropdown(this)">
+      <img class="nav-icon" src="{% static 'images/aniidco.png' %}" alt="ANIIDCO icon">
+      ANIIDCO
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <button type="button" class="nav-item" onclick="toggleDropdown(this)">
+      <img class="nav-icon" src="{% static 'images/division.png' %}" alt="Division icon">
+      Division
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <button type="button" class="nav-item" onclick="toggleDropdown(this)">
+      <img class="nav-icon" src="{% static 'images/resorts.png' %}" alt="Resorts icon">
+      Resorts
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <button type="button" class="nav-item" onclick="setActiveNav(this)">
+      <img class="nav-icon" src="{% static 'images/booking.png' %}" alt="Resorts Online Booking icon">
+      Resorts Online Booking
+    </button>
+    <button type="button" class="nav-item" onclick="setActiveNav(this)">
+      <img class="nav-icon" src="{% static 'images/imfl.png' %}" alt="IMFL Live Stock icon">
+      IMFL Live Stock
+    </button>
+    <button type="button" class="nav-item" onclick="toggleDropdown(this)">
+      <img class="nav-icon" src="{% static 'images/tender.png' %}" alt="Tender icon">
+      Tender
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <button type="button" class="nav-item" onclick="setActiveNav(this)">
+      <img class="nav-icon" src="{% static 'images/vacancy.png' %}" alt="Vacancy icon">
+      Vacancy
+    </button>
+    <button type="button" class="nav-item" onclick="toggleDropdown(this)">
+      <img class="nav-icon" src="{% static 'images/other-links.png' %}" alt="Other Links icon">
+      Other Links
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <button type="button" class="nav-item" onclick="toggleDropdown(this)">
+      <img class="nav-icon" src="{% static 'images/contact.png' %}" alt="Contact icon">
+      Contact
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero-wrap">
+    <div class="hero">
+      <div class="hero-photo" id="heroPhoto">
+
+    {% if banners %}
+        <img id="heroImage"
+             src="{{ banners.0.image.url }}"
+             alt="{{ banners.0.title }}">
+    {% endif %}
+
+      </div>
+      <div class="hero-arrow left" onclick="prevImage()">
+        ←
+      </div>
+      <div class="hero-arrow right" onclick="nextImage()">
+        →
+      </div>
+      <div class="hero-arrow left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </div>
+      <div class="hero-arrow right">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="hero-caption">
+        <span class="new-badge">NEW</span>
+        <h2>INAUGURATION OF SAGARIKA EMPORIUM</h2>
+        <p>ON 23.08.2025 AT CHENNAI, TTDC TOURISM COMPLEX, WALLAJAH ROAD</p>
+      </div>
+      <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome + cards -->
+  <div class="welcome-section">
+    <div class="officials-container">
+      <div class="official-card">
+        <img src="{% static 'images/chairman.jpg' %}" alt="Chairman">
+        <div class="official-info">
+          <h3>Dr. Chandra Bhushan Kumar, IAS (AGMUT-1995)</h3>
+          <p>Chairman-ANIIDCO</p>
+        </div>
+      </div>
+
+      <div class="official-card">
+        <img src="{% static 'images/md.jpg' %}" alt="Managing Director">
+        <div class="official-info">
+          <h3>Ms Chanchal Yadav, IAS (AGMUT-2008)</h3>
+          <p>Managing Director-ANIIDCO</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcome-col">
+      <div class="eyebrow"></div>
+      <div class="kicker">WELCOME TO</div>
+      <h2>ANIIDCO LTD.</h2>
+      <p>Andaman and Nicobar Islands Integrated Development Corporation Limited (ANIIDCO) was incorporated on 28th June 1988 under the Companies Act 1956 for rapid economic growth of the Islands. The main objective of the Corporation is for holistic and sustainable development of the territory.</p>
+      <div class="know-more-btn">
+        <span>Know More About ANIIDCO</span>
+      </div>
+    </div>
+
+
+    <div class="announcement-container">
+        <div class="announcement-header">
+            <h2>Latest Announcements</h2>
+            <a href="#">View All →</a>
+        </div>
+
+        <!-- Announcement Item -->
+        <div class="announcement-card">
+            <div class="announcement-date">
+                <span>28</span>
+                <small>JUN</small>
+            </div>
+
+            <div class="announcement-content">
+                <h3>Revised tariff for Dolphin Resort effective from 15 Oct 2025</h3>
+                <p>Updated pricing structure for accommodation services.</p>
+            </div>
+
+            <div class="announcement-action">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+        <!-- Announcement Item -->
+        <div class="announcement-card">
+            <div class="announcement-date">
+                <span>22</span>
+                <small>JUN</small>
+            </div>
+
+            <div class="announcement-content">
+                <h3>Tender invited for housekeeping services at Megapode Nest</h3>
+                <p>Applications open for service contractors.</p>
+            </div>
+
+            <div class="announcement-action">
+                <a href="#">View Tender</a>
+            </div>
+        </div>
+
+        <!-- Announcement Item -->
+        <div class="announcement-card">
+            <div class="announcement-date">
+                <span>15</span>
+                <small>JUN</small>
+            </div>
+
+            <div class="announcement-content">
+                <h3>Recruitment notice for Front Office Executive</h3>
+                <p>Vacancies open across multiple resort locations.</p>
+            </div>
+
+            <div class="announcement-action">
+                <a href="#">Apply Now</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <img src="{% static 'images/aniidco.png' %}" alt="About ANIIDCO" onerror="this.style.display='none'">
+        </div>
+        <h3>About ANIIDCO</h3>
+        <p>Learn more about our vision, mission and mandate.</p>
+        <div class="arrow">&#8594;</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <img src="{% static 'images/resorts.png' %}" alt="Our Resorts" onerror="this.style.display='none'">
+        </div>
+        <h3>Our Resorts</h3>
+        <p>Explore our beautiful resorts across the Islands.</p>
+        <div class="arrow">&#8594;</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <img src="{% static 'images/tender.png' %}" alt="Tenders" onerror="this.style.display='none'">
+        </div>
+        <h3>Tenders</h3>
+        <p>View latest tenders and procurement information.</p>
+        <div class="arrow">&#8594;</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <img src="{% static 'images/vacancy.png' %}" alt="Careers" onerror="this.style.display='none'">
+        </div>
+        <h3>Careers</h3>
+        <p>Explore current vacancies and career opportunities.</p>
+        <div class="arrow">&#8594;</div>
+      </div>
+    </div>
+  </div>
+<!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <div class="footer-head">
+          <div class="footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+          </div>
+          <div class="footer-head-text">
+            <h3>CONTACT INFO</h3>
+            <div class="footer-underline"></div>
+          </div>
+        </div>
+
+        <div class="footer-row" style="align-items:flex-start;">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
+          <span>ANIIDCO Ltd., Vikas Bhawan<br>PB No.180, Port Blair,<br>PIN- 744101, Andaman &amp; Nicobar Islands, India</span>
+        </div>
+        <div class="footer-row">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+          <span>EPABX No. +91 - 3192 - 234107, 234108,</span>
+        </div>
+        <div class="footer-row">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
+          <span>Phone : 236086, 234108</span>
+        </div>
+        <div class="footer-row">
+          <div class="footer-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <span>Email : <a href="#">aniidco[at]gmail[dot]com</a></span>
+        </div>
+
+        <div class="visitors-box">
+          <div class="visitors-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></div>
+          <div>
+            <div class="label">Visitors</div>
+            <div class="total">Total: <b>2 213 330</b></div>
+          </div>
+        </div>
+
+        <div class="footer-extra-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.4 8.7-8 9-4.6-.3-8-4-8-9V7z"/></svg>
+          Zahn-Versicherung
+        </div>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="footer-col">
+        <div class="footer-head">
+          <div class="footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          </div>
+          <div class="footer-head-text">
+            <h3>FOLLOW US</h3>
+            <div class="footer-underline"></div>
+          </div>
+        </div>
+
+        <div class="follow-card">
+          <div class="follow-avatar"></div>
+          <span>Megapode Resort</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>
+        </div>
+      </div>
+
+      <!-- CSR Policy -->
+      <div class="footer-col">
+        <div class="footer-head">
+          <div class="footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
+          </div>
+          <div class="footer-head-text">
+            <h3>CSR POLICY</h3>
+            <div class="footer-underline"></div>
+          </div>
+        </div>
+
+        <div class="csr-quote">
+          <div class="quote-mark">&#8220;</div>
+          <p>All donations towards the Prime Minister's National Relief Fund (PMNRF) are notified for 100% deduction from taxable income under Section 80G of the Income Tax Act, 1961.</p>
+          <div class="quote-mark end">&#8221;</div>
+        </div>
+
+        <div class="footer-admin">
+          <a href="{% url 'admin_login' %}" class="admin-footer-btn follow-card">
+            <div class="follow-avatar"></div>
+            <span>Admin Login</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="{% static 'images/logo.jpg' %}">
+        </div>
+        <div class="footer-brand-text">
+          <span class="line1">© 2026 ANIIDCO Ltd. All Rights Reserved.</span>
+          <span class="line2">This website is created, maintained, and owned by Andaman &amp; Nicobar Islands Integrated Development Corporation Limited (ANIIDCO Ltd.).</span>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <div class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7a4 4 0 001.8-2.2c-.8.5-1.6.8-2.5 1a4 4 0 00-6.9 3.6A11.4 11.4 0 013 4.9a4 4 0 001.2 5.3c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 003.2 3.9c-.5.1-1.1.2-1.7.1a4 4 0 003.7 2.8A8 8 0 012 18.6a11.3 11.3 0 006.1 1.8c7.3 0 11.3-6.1 11.3-11.3v-.5c.8-.6 1.4-1.3 1.9-2.1z"/></svg>
+        </div>
+        <div class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.9.2-1.5 1.5-1.5h1.6V4.2C16.3 4.1 15.2 4 14 4c-2.4 0-4 1.5-4 4.1v2.4H7.5v3H10V21h3.5z"/></svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

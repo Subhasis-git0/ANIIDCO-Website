@@ -1,0 +1,151 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIIDCO Admin Login</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="background-overlay"></div>
+
+<div class="login-container">
+
+    <!-- Left Side -->
+    <div class="login-left">
+
+        <img src="{% static 'images/logo.jpg' %}"
+             alt="ANIIDCO Logo"
+             class="logo">
+
+        <h1>ANIIDCO</h1>
+
+        <h2>Administrator Portal</h2>
+
+        <p>
+            Andaman & Nicobar Islands Integrated Development Corporation Ltd.
+        </p>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="login-right">
+
+        <div class="login-card">
+
+            <h2>Admin Login</h2>
+
+            <p>
+                Please sign in with your administrator credentials.
+            </p>
+
+            {% if error %}
+            <div class="error-box">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <!-- Username -->
+
+                <div class="input-group">
+
+                    <label>Username</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Enter username"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            required>
+
+                        <i class="fa-solid fa-eye toggle-password"
+                           onclick="togglePassword()"></i>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" class="login-btn">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Sign In
+
+                </button>
+
+            </form>
+
+            <div class="login-footer">
+
+                <a href="{% url 'home' %}">
+                    ← Back to Website
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+    let password=document.getElementById("password");
+
+    if(password.type==="password"){
+
+        password.type="text";
+
+    }else{
+
+        password.type="password";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
