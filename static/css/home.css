@@ -854,6 +854,7 @@ nav{
   display:flex;
   gap:8px;
 }
+<<<<<<< HEAD
 .footer-admin{
     margin-top: 30px;
     display:flex;
@@ -892,6 +893,8 @@ nav{
     font-weight:600;
 }
 
+=======
+>>>>>>> 9e84bf61e4f12992621a566bf7bcd1bf2f024b41
 .social-btn{
   width:24px;
   height:24px;
